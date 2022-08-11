@@ -21,7 +21,8 @@ export class MusicService {
 
   constructor(private http: HttpClient) { }
 
-  getSongs(): Observable<Song[]> {
+  getSongs(id: number): Observable<Song[]> {
+    let url = `${this.musicUrl}/${id}`;
     return of(this.tempSongsData)
   }
 
@@ -39,6 +40,15 @@ createSong(song: SongDTO): Observable<Song> {
       catchError(this.errorHandler))
     )
   return of(songToAdd);
+}
+
+updateSong(song: Song): Observable<Song> {
+  let url = `${this.musicUrl}/${song.id}`;
+  return this.http.put<Song>(url, song, this.httpOptions);
+}
+
+deleteSong(id: Number): Observable<Song> {
+  return  this.http.delete<Song>(`${this.musicUrl}/${id}`, this.httpOptions);
 }
 
 errorHandler(error: Error | ErrorEvent | any) {
