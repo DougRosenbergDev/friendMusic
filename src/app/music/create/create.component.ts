@@ -29,9 +29,13 @@ export class CreateComponent implements OnInit {
   get f() { return this.newSongForm.controls; }
 
   submit(){
-    console.log(this.newSongForm.value);
-    console.log(this.newSongForm.valid);
-    console.log("Song created successfully");
+    this.musicService.createSong(this.newSongForm.value).subscribe(() => {
+      console.log(this.newSongForm.value);
+      console.log(this.newSongForm.valid);
+      console.log("Song created successfully");
+      this.router.navigateByUrl('music/index');
+    });
+    
   }
 
 }
