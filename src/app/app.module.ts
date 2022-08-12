@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; 
+import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService} from 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,12 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule, 
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
+    FormsModule,
+    MusicModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    MusicModule
   ],
   providers: [],
   bootstrap: [AppComponent]

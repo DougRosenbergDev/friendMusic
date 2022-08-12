@@ -20,7 +20,8 @@ export class MusicService {
   constructor(private http: HttpClient) { }
 
   getSongs(id: number): Observable<Song[]> {
-    return this.http.get<Song[]>(this.musicUrl, this.httpOptions);
+    return of(this.tempSongsData)
+    //return this.http.get<Song[]>(this.musicUrl, this.httpOptions);
   }
 
 createSong(song: SongDTO): Observable<Song> {

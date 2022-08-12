@@ -23,8 +23,8 @@ export class IndexComponent implements OnInit {
   }
 
 // provide a way 
-retrieveSongs() : void {
-  this.musicService.getSongs().subscribe(songs => this.songs = songs);
-}
+// retrieveSongs() : void {
+//   this.musicService.getSongs().subscribe(songs => this.songs = songs);
+// }
 
 }
