@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MusicService } from 'src/app/music/music.service';
+import { MusicService } from '../music.service';
 import { Song } from '../song';
 
 @Component({
@@ -15,10 +15,10 @@ export class IndexComponent implements OnInit {
 
   // initialization of the component
   ngOnInit(): void {
-    this.getMusic();
+    this.retrieveSongs();
   }
 
-  getMusic(): void {
+  retrieveSongs(): void {
     this.musicService.getSongs().subscribe(songs => this.songs = songs);
   }
 

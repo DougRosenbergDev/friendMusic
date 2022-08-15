@@ -4,6 +4,7 @@ export interface Song {
     artist: string;
     length: string;
     keySignature: string;
+    albumTitle: string;
 }
 
 export interface SongDTO {
@@ -11,6 +12,7 @@ export interface SongDTO {
     artist: string;
     length: string;
     keySignature: string;
+    albumTitle: string;
 }
 
 

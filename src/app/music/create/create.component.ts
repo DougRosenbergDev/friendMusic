@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MusicModule } from '../music.module';
+
 import { MusicService } from '../music.service';
 
 @Component({
@@ -19,10 +19,10 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.newSongForm = new FormGroup({
-      name: new FormControl('name', Validators.required),
-      artist: new FormControl('artist', Validators.required),
-      length: new FormControl('ength', Validators.required),
-      keySignature: new FormControl('keySignature', Validators.required)
+      name: new FormControl('', Validators.required),
+      artist: new FormControl('', Validators.required),
+      length: new FormControl('', Validators.required),
+      keySignature: new FormControl('', Validators.required)
     });
   }
 
@@ -34,8 +34,6 @@ export class CreateComponent implements OnInit {
       console.log(this.newSongForm.valid);
       console.log("Song created successfully");
       this.router.navigateByUrl('music/index');
-    });
-    
+    });   
   }
-
 }
